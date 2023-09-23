@@ -1,0 +1,114 @@
+.paginatorholder
+{
+  align-items: center;
+}
+
+.bottomarrows {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;        
+  }
+
+  .pagelabel {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    padding-left: 20px; 
+    padding-right: 20px;
+    width: 200px; 
+  }
+
+  .invisible
+  {
+    display: none;
+  }
+
+  .above
+  {
+    z-index: 9999;    
+    text-align: center;    
+  }
+
+  .arrow
+  {
+    width: 50px;
+    height: 50px;
+    color: rgba(255, 255, 255, 1);       
+  }
+
+  .smallarrow
+  {
+    width: 40px;
+    height: 40px;    
+  }
+
+  .currentimage
+  { 
+    object-fit: contain;
+    max-width: 1000px;
+    max-height: 700px;     
+  }
+
+  .pageleft
+  {
+    height: 100%;
+    padding: 10px;
+    background-color: rgba(83, 83, 83, 0.5);
+    z-index: 12000;    
+    opacity: 0.0;    
+    transition: opacity 2s ease-out 100ms;
+  }
+
+  .pageleft:hover
+  {
+    opacity: 1.0;
+  }
+
+  .pageright
+  {
+    height: 100%;
+    padding: 10px;
+    background-color: rgba(83, 83, 83, 0.5);
+    z-index: 12000;        
+    opacity: 0.0;
+    transition: opacity 1s ease-out 50ms;
+  }
+
+  .pageright:hover
+  {
+    opacity: 1.0;
+  }
+
+  .containerholder
+  {
+    width: 100vw;
+  }
+
+  .imagecontainer
+  {    
+    z-index: 10000;
+    overflow: auto;    
+    height: 70vh;
+  }
+
+  .xmark
+  {
+    padding-top: 20px;
+    width: 40px;
+    height: 40px;
+  }
+
+  @media only screen and (max-height: 800px) {
+    .imagecontainer {
+      height:50vh;
+    }
+  }
+
+  @media only screen and (max-height: 400px) {
+    .imagecontainer {
+      height:20vh;
+    }
+  }
+
+
+

@@ -1,0 +1,27 @@
+.container
+{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: flex;
+}
+
+.frogcolumn
+{    
+    padding-top: 20px;
+}
+
+.walloftext
+{
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+
+.header
+{
+    font-weight: normal;
+}
+
+@media only screen and (max-width: 800px) {
+    .container {
+      display:block;
+    }
+  }

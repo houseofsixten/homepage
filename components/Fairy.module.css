@@ -1,0 +1,32 @@
+.container
+{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: flex;
+}
+
+.thumbnailcolumn
+{    
+    padding-top: 0px;
+}
+
+.thumbnail
+{
+    width: 360px;
+    height: 233px;
+}
+
+.walloftext
+{
+    padding-left: 20px;
+}
+
+.header
+{
+    font-weight: normal;
+}
+
+@media only screen and (max-width: 800px) {
+    .container {
+      display:block;
+    }
+  }
