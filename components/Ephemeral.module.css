@@ -1,12 +1,12 @@
 .container
 {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    display: flex;
 }
 
 .thumbnailcolumn
 {    
     padding-top: 0px;
+    max-width: 300px;
 }
 
 .thumbnail
@@ -16,9 +16,8 @@
 }
 
 .walloftext
-{
-    padding-top: 20px;
-    padding-left: 20px;
+{    
+    padding-bottom: 10px;
 }
 
 .header
@@ -26,8 +25,3 @@
     font-weight: normal;
 }
 
-@media only screen and (max-width: 800px) {
-    .container {
-      display:block;
-    }
-  }

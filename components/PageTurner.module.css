@@ -7,7 +7,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-bottom: 10px;        
+    padding: 10px;        
   }
 
   .pagelabel {
@@ -27,69 +27,21 @@
   {
     z-index: 9999;    
     text-align: center;
-    padding-top: 10px;    
+    padding-top: 10px;  
   }
 
   .currentimage
   { 
     object-fit: contain;    
-    max-height: 750px; 
-    width: auto;
-  }
-
-  .pageleft
-  {
-    height: 100%;
-    padding: 10px;
-    background-color: rgba(83, 83, 83, 0.5);
-    z-index: 12000;    
-    opacity: 0.0;    
-    transition: opacity 2s ease-out 100ms;
-  }
-
-  .pageleft:hover
-  {
-    opacity: 1.0;
-  }
-
-  .pageright
-  {
-    height: 100%;
-    padding: 10px;
-    background-color: rgba(83, 83, 83, 0.5);
-    z-index: 12000;        
-    opacity: 0.0;
-    transition: opacity 1s ease-out 50ms;
-  }
-
-  .pageright:hover
-  {
-    opacity: 1.0;
-  }
-
-  .containerholder
-  {
-    width: 100vw;
   }
 
   .imagecontainer
   {    
     z-index: 10000;
-    overflow: auto;    
-    height: 70vh;
+    position: relative;
+    height: 80vh;    
   }
 
-  @media only screen and (max-height: 800px) {
-    .imagecontainer {
-      height:50vh;
-    }
-  }
-
-  @media only screen and (max-height: 400px) {
-    .imagecontainer {
-      height:20vh;
-    }
-  }
 
 
 

@@ -10,7 +10,7 @@ export default function About() {
         <div className={styles.container}>
 
             <div className={styles.frogcolumn}>
-                <Image src={Constants.FROG} alt="Frog" priority="true"/>
+                <Image src={Constants.FROG} alt="Frog" priority="true" layout="responsive" />
             </div>            
 
             <div className={styles.walloftext}>
@@ -46,7 +46,8 @@ export default function About() {
                 </div>
                 
                 <div className={styles.contact}>
-                    <Image src={guuicon} alt="Guu from Hare Guu" height="20" width="20"/>&nbsp;email: guuonearth at yahoo dot com
+                    <Image src={guuicon} alt="Guu from Hare Guu" height="20" width="20"/>&nbsp;
+                    <span className={styles.email}>guuonearth at yahoo dot com</span>
                 </div>
                 
             </div>

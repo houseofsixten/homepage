@@ -7,7 +7,7 @@ export default function Fairy() {
         <div className={styles.container}>
 
             <div className={styles.thumbnailcolumn}>
-                <Image src={Constants.THUMBNAILS.get("Fairy Ring")} alt="Tsubaki Shrine" className={styles.thumbnail} priority="true"></Image>
+                <Image src={Constants.THUMBNAILS.get("Fairy Ring")} alt="Tsubaki Shrine" className={styles.thumbnail} layout="responsive" priority="true"></Image>
             </div>            
 
             <div className={styles.walloftext}>

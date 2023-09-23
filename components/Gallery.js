@@ -94,7 +94,7 @@ export default function Gallery(params) {
     return (
         <div>
             {homeText}
-            <Dialog open={open} onClose={handleClose} maxWidth="lg" fullWidth>
+            <Dialog open={open} onClose={handleClose} maxWidth="xl" fullScreen>
                 <PageTurner
                     images={images}
                     imageNumber={imageNumber}
