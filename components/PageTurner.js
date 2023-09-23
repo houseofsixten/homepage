@@ -44,42 +44,23 @@ export default function PageTurner(params) {
 
     const galleryAlt = `Gallery image ${params.imageNumber}`;
 
-    const currentImage = imagepath != null ? <Image src={imagepath} alt={galleryAlt} className={styles.currentimage} onClick={handleImageRight}/> : null;
+    const currentImage = imagepath != null ? <Image src={imagepath} alt={galleryAlt} className={styles.currentimage} onClick={handleImageRight} layout="fill"/> : null;
 
     return (
         <div className={styles.above}>            
-            <div>
-                <table>
-                    <tbody>
-                        <tr>
-                            <td rowSpan="3" className={styles.pageleft} onClick={handleImageLeft}>
-                                <ArrowCircleLeft onClick={handleImageLeft} fontSize="large"/>
-                            </td>
-                            <td>                    
-                                <Cancel onClick={params.handleClose} fontSize="large"/>
-                            </td>                
-                            <td rowSpan="3" className={styles.pageright} onClick={handleImageRight}>
-                                <ArrowCircleRight onClick={handleImageRight} fontSize="large"/>                
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className={styles.containerholder}>
-                                <div className={styles.imagecontainer}>
-                                    {currentImage}
-                                </div>
-                            </td>                    
-                        </tr>
-                        <tr>
-                            <td className={styles.paginatorholder}>
-                                <div className={imagepath != null ? styles.bottomarrows : styles.invisible}>                
-                                    <ArrowCircleLeft onClick={handleImageLeft} fontSize="large"/>
-                                    <span className={styles.pagelabel}>Page {params.imageNumber + 1} of {imageCount}</span>
-                                    <ArrowCircleRight onClick={handleImageRight} fontSize="large"/>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div>                            
+                <Cancel onClick={params.handleClose} fontSize="large"/>
+                        
+                <div className={styles.imagecontainer}>
+                    {currentImage}
+                </div>
+                        
+                <div className={imagepath != null ? styles.bottomarrows : styles.invisible}>                
+                    <ArrowCircleLeft onClick={handleImageLeft} fontSize="large"/>
+                    <span className={styles.pagelabel}>Page {params.imageNumber + 1} of {imageCount}</span>
+                    <ArrowCircleRight onClick={handleImageRight} fontSize="large"/>
+                </div>
+                        
             </div>            
         </div>
     );

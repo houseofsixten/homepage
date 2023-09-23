@@ -7,7 +7,7 @@ export default function Autumn() {
         <div className={styles.container}>
 
             <div className={styles.thumbnailcolumn}>
-                <Image src={Constants.THUMBNAILS.get("Autumn Children")} alt="Violin and Japanese maple leaf" className={styles.thumbnail} priority="true"></Image>
+                <Image src={Constants.THUMBNAILS.get("Autumn Children")} alt="Violin and Japanese maple leaf" layout="responsive" className={styles.thumbnail} priority="true"></Image>
             </div>            
 
             <div className={styles.walloftext}>

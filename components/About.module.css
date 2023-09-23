@@ -1,12 +1,12 @@
 .container
 {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    display: flex;
+    font-family: Georgia, 'Times New Roman', Times, serif;   
 }
 
 .frogcolumn
 {    
     padding-top: 20px;
+    max-width: 250px;    
 }
 
 .walloftext
@@ -26,8 +26,9 @@
     align-items: center;
 }
 
-@media only screen and (max-width: 800px) {
-    .container {
-      display:block;
-    }
-  }
+.email
+{
+    font-size:x-small;
+}
+
+
