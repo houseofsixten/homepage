@@ -1,13 +1,16 @@
 import Constants from '../constants/Constants.js';
 import Image from 'next/image';
 import styles from '../components/About.module.css';
+import twittericon from '../images/twitter_icon.jpg';
+import pixivicon from '../images/pixiv_icon.jpg';
+import guuicon from '../images/guu_icon.jpg';
 
 export default function About() {
     return(
         <div className={styles.container}>
 
             <div className={styles.frogcolumn}>
-                <Image src={Constants.FROG} alt="Frog" priority="true"></Image>
+                <Image src={Constants.FROG} alt="Frog" priority="true"/>
             </div>            
 
             <div className={styles.walloftext}>
@@ -27,7 +30,25 @@ export default function About() {
                 "Hold water" is an expression used to describe not only good bottles and buckets,
                 but also good theories and arguments. It is the goal
                 of House of Sixten to hold water while also being funny and wholesome
-                with a charming round shape.
+                with a charming round shape.<br/>
+                <br/>
+
+                <div className={styles.contact}>
+                    <a href="http://www.twitter.com/houseofsixten"><Image src={twittericon} alt="twitter" height="20" width="20"/></a>
+                    &nbsp;
+                    <a href="http://www.twitter.com/houseofsixten">twitter: houseofsixten</a>
+                </div>
+
+                <div className={styles.contact}>
+                    <a href="https://www.pixiv.net/en/users/1976644"><Image src={pixivicon} alt="pixiv" height="20" width="20"/></a>
+                    &nbsp;
+                    <a href="https://www.pixiv.net/en/users/1976644">pixiv: sixten</a>
+                </div>
+                
+                <div className={styles.contact}>
+                    <Image src={guuicon} alt="Guu from Hare Guu" height="20" width="20"/>&nbsp;email: guuonearth at yahoo dot com
+                </div>
+                
             </div>
 
         </div>

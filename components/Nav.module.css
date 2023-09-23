@@ -4,6 +4,18 @@
   margin-top: -100px;
 }
 
+.navbar
+{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.subnavbar
+{
+  display: flex;
+  justify-content: flex-start;
+}
+
 .subnav
 {
   padding: 10px;
@@ -24,7 +36,8 @@
     margin-right: 5px;
     text-transform: none;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    z-index: 1000;   
+    z-index: 1000;
+    padding: 10px;   
   }
 
   .toolbarbutton:hover
@@ -33,7 +46,7 @@
   }
   
   .toolbarbuttonselected {
-    color: white;
+    color: black;
     background-color:rgb(157, 220, 190);
     border-top: 2px black solid;
     border-left: 2px black solid;
@@ -43,7 +56,8 @@
     margin-right: 5px;
     text-transform: none;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    z-index: 1000;   
+    z-index: 1000;
+    padding: 10px;   
   }
   
   .subtoolbarbutton {
@@ -55,7 +69,8 @@
     margin-right: 5px;
     text-transform: none;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    z-index: 1000;  
+    z-index: 1000;
+    padding: 10px;  
   }
 
   .subtoolbarbutton:hover {
@@ -73,7 +88,8 @@
     margin-right: 5px;
     text-transform: none;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    z-index: 1000;  
+    z-index: 1000;
+    padding: 10px;  
   }
   
   .pages
@@ -94,7 +110,8 @@
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 14px;
+    font-size: 16px;
+    padding: 10px;
   }
 
   .subdropdown
@@ -106,13 +123,14 @@
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 14px;
+    font-size: 16px;
+    padding: 10px;
   }
 
   .menuitem
   {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 14px;
+    font-family: Georgia, 'Times New Roman', Times, serif;    
+    padding: 10px;
   }
 
   @media only screen and (max-width: 800px) {
