@@ -106,9 +106,9 @@ export default function Gallery(params) {
             </Dialog>            
             {thumbnails}            
             <div className={images != null ? styles.paginator : styles.invisible}>
-                <ArrowCircleLeft onClick={handlePageLeft} className={styles.smallarrow}/>
+                <ArrowCircleLeft onClick={handlePageLeft} fontSize="large"/>
                     <div className={styles.pagelabel}>Images {startPage} to {endPage} of {imageCount}</div>
-                <ArrowCircleRight onClick={handlePageRight} className={styles.smallarrow}/>
+                <ArrowCircleRight onClick={handlePageRight} fontSize="large"/>
             </div>                            
         </div>
     );

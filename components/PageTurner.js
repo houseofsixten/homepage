@@ -44,7 +44,7 @@ export default function PageTurner(params) {
 
     const galleryAlt = `Gallery image ${params.imageNumber}`;
 
-    const currentImage = imagepath != null ? <Image src={imagepath} alt={galleryAlt} className={styles.currentimage} /> : null;
+    const currentImage = imagepath != null ? <Image src={imagepath} alt={galleryAlt} className={styles.currentimage} onClick={handleImageRight}/> : null;
 
     return (
         <div className={styles.above}>            
@@ -53,13 +53,13 @@ export default function PageTurner(params) {
                     <tbody>
                         <tr>
                             <td rowSpan="3" className={styles.pageleft} onClick={handleImageLeft}>
-                                <ArrowCircleLeft onClick={handleImageLeft} className={styles.arrow}/>
+                                <ArrowCircleLeft onClick={handleImageLeft} fontSize="large"/>
                             </td>
                             <td>                    
-                                <Cancel onClick={params.handleClose} className={styles.xmark}/>
+                                <Cancel onClick={params.handleClose} fontSize="large"/>
                             </td>                
                             <td rowSpan="3" className={styles.pageright} onClick={handleImageRight}>
-                                <ArrowCircleRight onClick={handleImageRight} className={styles.arrow}/>                
+                                <ArrowCircleRight onClick={handleImageRight} fontSize="large"/>                
                             </td>
                         </tr>
                         <tr>
@@ -72,9 +72,9 @@ export default function PageTurner(params) {
                         <tr>
                             <td className={styles.paginatorholder}>
                                 <div className={imagepath != null ? styles.bottomarrows : styles.invisible}>                
-                                    <ArrowCircleLeft onClick={handleImageLeft} className={styles.smallarrow}/>
+                                    <ArrowCircleLeft onClick={handleImageLeft} fontSize="large"/>
                                     <span className={styles.pagelabel}>Page {params.imageNumber + 1} of {imageCount}</span>
-                                    <ArrowCircleRight onClick={handleImageRight} className={styles.smallarrow}/>
+                                    <ArrowCircleRight onClick={handleImageRight} fontSize="large"/>
                                 </div>
                             </td>
                         </tr>
