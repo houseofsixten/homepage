@@ -502,7 +502,7 @@ import ba_15 from '../images/bluearchive/trinidad/sofa.jpg';
 import ba_16 from '../images/bluearchive/trinidad/suzumi3.jpg';
 
 const menu = new Map([
-    ["Home", ["About"]],
+    ["Home", ["Landing", "About"]],
     ["Magic", ["Lotus Cobra is Evil"]],
     ["Touhou", ["Fairy Ring", "Autumn Children", "Use Your Illusion", "Ephemeral Unnatural Balance"]],
     ["KanColle", ["Ryujo and the Legendary Admiral", "Sweet Home Chicago", "Flatland"]],
@@ -513,7 +513,8 @@ const menu = new Map([
 );
 
 const paths = new Map([
-    ["About", "/home/about"],
+    ["Landing", "/home/landing"],
+    ["About", "/home/about"],    
     ["Lotus Cobra is Evil", "/magic/lotuscobraisevil"],
     ["Fairy Ring", "/touhou/fairyring"],
     ["Autumn Children", "/touhou/autumnchildren"],

@@ -10,7 +10,7 @@ export default function About() {
         <div className={styles.container}>
 
             <div className={styles.frogcolumn}>
-                <Image src={Constants.FROG} alt="Frog" priority="true" layout="responsive" />
+                <Image src={Constants.FROG} alt="Frog" priority="true" className={styles.frogimage} />
             </div>            
 
             <div className={styles.walloftext}>

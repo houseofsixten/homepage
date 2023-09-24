@@ -44,7 +44,7 @@ export default function PageTurner(params) {
 
     const galleryAlt = `Gallery image ${params.imageNumber}`;
 
-    const currentImage = imagepath != null ? <Image src={imagepath} alt={galleryAlt} className={styles.currentimage} onClick={handleImageRight} layout="fill"/> : null;
+    const currentImage = imagepath != null ? <Image src={imagepath} alt={galleryAlt} className={styles.currentimage} onClick={handleImageRight} fill={true}/> : null;
 
     return (
         <div className={styles.above}>            
