@@ -7,7 +7,7 @@ export default function Illusion() {
         <div className={styles.container}>
 
             <div className={styles.thumbnailcolumn}>
-                <Image src={Constants.THUMBNAILS.get("Use Your Illusion")} alt="Gun, rose, and sword" layout="responsive" className={styles.thumbnail} priority="true"></Image>
+                <Image src={Constants.THUMBNAILS.get("Use Your Illusion")} alt="Gun, rose, and sword" className={styles.thumbnail} priority="true"></Image>
             </div>            
 
             <div className={styles.walloftext}>                

@@ -5,14 +5,14 @@
 
 .thumbnailcolumn
 {    
-    padding-top: 0px;
-    max-width: 300px;   
+    padding-top: 0px;       
 }
 
 .thumbnail
 {
-    width: 372px;
-    height: 256px;
+    max-width: 500px;
+    width: 100%;
+    height: auto;  
 }
 
 .walloftext

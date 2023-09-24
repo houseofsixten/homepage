@@ -11,8 +11,9 @@
 
 .thumbnail
 {
-    width: 320px;
-    height: 311px;
+    max-width: 300px;
+    width: 100%;
+    height: auto;
 }
 
 .walloftext

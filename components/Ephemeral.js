@@ -7,7 +7,7 @@ export default function Ephemeral() {
         <div className={styles.container}>
 
             <div className={styles.thumbnailcolumn}>
-                <Image src={Constants.THUMBNAILS.get("Ephemeral Unnatural Balance")} alt="Main menu of game with Rin Satsuki" layout="responsive" className={styles.thumbnail} priority="true"></Image>
+                <Image src={Constants.THUMBNAILS.get("Ephemeral Unnatural Balance")} alt="Main menu of game with Rin Satsuki" className={styles.thumbnail} priority="true"></Image>
             </div>            
 
             <div className={styles.walloftext}>

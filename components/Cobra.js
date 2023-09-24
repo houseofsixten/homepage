@@ -7,7 +7,7 @@ export default function Cobra() {
         <div className={styles.container}>
 
             <div className={styles.thumbnailcolumn}>
-                <Image src={Constants.THUMBNAILS.get("Lotus Cobra is Evil")} alt="SATANAS L. DIABLO" className={styles.thumbnail} layout="responsive" priority="true"></Image>
+                <Image src={Constants.THUMBNAILS.get("Lotus Cobra is Evil")} alt="SATANAS L. DIABLO" className={styles.thumbnail} priority="true"></Image>
             </div>            
 
             <div className={styles.walloftext}>

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Constants from '../constants/Constants.js';
+import Landing from '../components/Landing.js';
 import About from '../components/About.js';
 import Cobra from '../components/Cobra.js';
 import Fairy from '../components/Fairy.js';
@@ -83,7 +84,8 @@ export default function Gallery(params) {
     }) :
     null;
     
-    const homeText = params.subCat == "About" ? (<About/>)
+    const homeText =  params.subCat == "Landing" ? (<Landing/>)
+                        : params.subCat == "About" ? (<About/>)
                         : params.subCat == "Lotus Cobra is Evil" ? (<Cobra/>)
                         : params.subCat == "Fairy Ring" ? (<Fairy/>)
                         : params.subCat == "Autumn Children" ? (<Autumn/>)
