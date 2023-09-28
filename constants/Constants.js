@@ -495,7 +495,7 @@ import ba_08 from '../images/bluearchive/trinidad/hifumi-idol.jpg';
 import ba_09 from '../images/bluearchive/trinidad/hifumi-jacaranda4.jpg';
 import ba_10 from '../images/bluearchive/trinidad/hifumi-oldchurch.jpg';
 import ba_11 from '../images/bluearchive/trinidad/hifumi-suzuran.png';
-import ba_12 from '../images/bluearchive/trinidad/hifumi-oldchurch.jpg';
+import ba_12 from '../images/bluearchive/trinidad/hifumariachi2.jpg';
 import ba_13 from '../images/bluearchive/trinidad/hifumi-vargas2.png';
 import ba_14 from '../images/bluearchive/trinidad/hyakki2.jpg';
 import ba_15 from '../images/bluearchive/trinidad/sofa.jpg';
