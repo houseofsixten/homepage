@@ -446,6 +446,8 @@ import holo_09 from '../images/fate/hololive/sora4th.jpg';
 import holo_10 from '../images/fate/hololive/soramama.jpg';
 import holo_11 from '../images/fate/hololive/sorayu2.jpg';
 import holo_12 from '../images/fate/hololive/yosuga.jpg';
+import holo_13 from '../images/fate/hololive/firefly_sora.jpg';
+import holo_14 from '../images/fate/hololive/submerged.jpg';
 
 import ak_01 from '../images/arknights/orifox/all_angelina.jpg';
 import ak_02 from '../images/arknights/orifox/ark_ruins4.jpg';
@@ -660,8 +662,9 @@ const images = new Map([
         ]
     ],
     ["Hololive",
-        [ holo_01, holo_02, holo_03, holo_04, holo_05, holo_06,
-            holo_07, holo_08, holo_09, holo_10, holo_11, holo_12
+        [ holo_01, holo_02, holo_03, holo_04, holo_05,
+            holo_06, holo_07, holo_08, holo_09, holo_10,
+            holo_11, holo_12, holo_13, holo_14
         ]
     ],
     ["Orifox Cluster",
