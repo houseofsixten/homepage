@@ -502,6 +502,8 @@ import ba_13 from '../images/bluearchive/trinidad/hifumi-vargas2.png';
 import ba_14 from '../images/bluearchive/trinidad/hyakki2.jpg';
 import ba_15 from '../images/bluearchive/trinidad/sofa.jpg';
 import ba_16 from '../images/bluearchive/trinidad/suzumi3.jpg';
+import ba_17 from '../images/bluearchive/trinidad/hifumi-coco.jpg';
+import ba_18 from '../images/bluearchive/trinidad/hifumi-jarabe.jpg';
 
 const menu = new Map([
     ["Home", ["Landing", "About"]],
@@ -681,7 +683,7 @@ const images = new Map([
         [ ba_01, ba_02, ba_03, ba_04, ba_05,
           ba_06, ba_07, ba_08, ba_09, ba_10,
           ba_11, ba_12, ba_13, ba_14, ba_15,
-          ba_16
+          ba_16, ba_17, ba_18
         ]
     ]
 ]
