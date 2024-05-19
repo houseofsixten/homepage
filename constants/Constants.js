@@ -485,6 +485,7 @@ import ak_33 from '../images/arknights/orifox/radiotel.jpg';
 import ak_34 from '../images/arknights/orifox/cluster.jpg';
 import ak_35 from '../images/arknights/orifox/undertable.jpg';
 import ak_36 from '../images/arknights/orifox/pharma.jpg';
+import ak_37 from '../images/arknights/orifox/doublefox2b.jpg';
 
 import ba_01 from '../images/bluearchive/trinidad/atsuko.jpg';
 import ba_02 from '../images/bluearchive/trinidad/hibiki.jpg';
@@ -504,6 +505,7 @@ import ba_15 from '../images/bluearchive/trinidad/sofa.jpg';
 import ba_16 from '../images/bluearchive/trinidad/suzumi3.jpg';
 import ba_17 from '../images/bluearchive/trinidad/hifumi-coco.jpg';
 import ba_18 from '../images/bluearchive/trinidad/hifumi-jarabe.jpg';
+import ba_19 from '../images/bluearchive/trinidad/hifumi-negra3.jpg';
 
 const menu = new Map([
     ["Home", ["Landing", "About"]],
@@ -676,14 +678,15 @@ const images = new Map([
           ak_16, ak_17, ak_18, ak_19, ak_20,
           ak_21, ak_22, ak_23, ak_24, ak_25,
           ak_26, ak_27, ak_28, ak_29, ak_30,
-          ak_31, ak_32, ak_33, ak_34, ak_35, ak_36
+          ak_31, ak_32, ak_33, ak_34, ak_35,
+          ak_36, ak_37
         ]
     ],
     ["Escuela Trinidad",
         [ ba_01, ba_02, ba_03, ba_04, ba_05,
           ba_06, ba_07, ba_08, ba_09, ba_10,
           ba_11, ba_12, ba_13, ba_14, ba_15,
-          ba_16, ba_17, ba_18
+          ba_16, ba_17, ba_18, ba_19
         ]
     ]
 ]
