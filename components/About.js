@@ -34,12 +34,6 @@ export default function About() {
                 <br/>
 
                 <div className={styles.contact}>
-                    <a href="http://www.twitter.com/houseofsixten"><Image src={twittericon} alt="twitter" height="20" width="20"/></a>
-                    &nbsp;
-                    <a href="http://www.twitter.com/houseofsixten">twitter: houseofsixten</a>
-                </div>
-
-                <div className={styles.contact}>
                     <a href="https://www.pixiv.net/en/users/1976644"><Image src={pixivicon} alt="pixiv" height="20" width="20"/></a>
                     &nbsp;
                     <a href="https://www.pixiv.net/en/users/1976644">pixiv: sixten</a>
