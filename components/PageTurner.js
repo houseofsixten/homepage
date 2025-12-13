@@ -1,64 +1,85 @@
-import { ArrowCircleLeft, ArrowCircleRight, Cancel }  from '@mui/icons-material';
-import Image from 'next/image';
+import { ArrowCircleLeft, ArrowCircleRight }  from '@mui/icons-material';
 import styles from '../components/PageTurner.module.css';
 import Constants from '../constants/Constants.js';
+import Image from 'next/image.js';
+
+const pagePadding = 2;
 
 export default function PageTurner(params) {
+    const { cat, subcat, pgnum, setPgnum, imageKey, origin } = params;
 
-    const imagepath = params.images != null ? params.images[params.imageNumber] : null;
-    const imageCount = params.images != null ? params.images.length : 0;    
-
-    const handleImageRight = () => {
-        if (params.imageNumber + 1 >= imageCount)
-        {
-            params.pageRight();
-            params.setImageNumber(0);            
-        }
-        else
-        {
-            if (Math.floor((params.imageNumber + 1) / Constants.GALLERYSIZE) > Math.floor(params.imageNumber / Constants.GALLERYSIZE) )
-            {
-                params.pageRight();
-            }
-
-            params.setImageNumber(params.imageNumber + 1);
-        }
-    };
-    
-    const handleImageLeft = () => {
-        if (params.imageNumber - 1 < 0)
-        {
-            params.pageLeft();
-            params.setImageNumber(Math.max(imageCount - 1, 0));
-        }
-        else
-        {
-            if (Math.floor((params.imageNumber - 1) / Constants.GALLERYSIZE) < Math.floor(params.imageNumber / Constants.GALLERYSIZE) )
-            {
-                params.pageLeft();
-            }
-
-            params.setImageNumber(params.imageNumber - 1);
-        }
+    const handlePgnumClick = (newPgnum) => {        
+        setPgnum(newPgnum);
+        window.history.replaceState(null, "House of Sixten", origin + "/" + cat + "/" + subcat + "/" + newPgnum);
     };
 
-    const galleryAlt = `Gallery image ${params.imageNumber}`;
+    const renderPageButton = (i) => {
+        const lastPage = Constants.IMAGES.get(imageKey).length - 1;
+        const extraLeftPadding = pagePadding * 2 - (lastPage - pgnum) > 0 ? pagePadding * 2 - (lastPage - pgnum) : 0;
+        const edgeLeftPadding = pgnum - pagePadding == 2 ? 1 : 0;
+        const extraRightPadding = pagePadding * 2 - pgnum > 0 ? pagePadding * 2 - pgnum : 0;
+        const edgeRightPadding = lastPage - (pgnum + pagePadding) == 2 ? 1 : 0;        
+        if (i == 0 ||
+            i == lastPage ||
+                (
+                    i >= pgnum - pagePadding - extraLeftPadding - edgeLeftPadding &&
+                    i <= pgnum + pagePadding + extraRightPadding + edgeRightPadding
+                )
+            )
+        {
+            return (
+                <button
+                    key={"pageturner_" + i}
+                    type="button"
+                    onClick={() => handlePgnumClick(i)}
+                    className={styles.pagebutton + (pgnum == i ? (" " + styles.current) : "")}
+                >
+                    <Image src={Constants.IMAGES.get(imageKey)[i]} alt={"thumbnail_" + i} className={styles.pagebuttonimage} />
+                    <div className={styles.pagenumberdiv}>{i}</div>
+                </button>
+            );
+        } else if ((i == 1 && i < pgnum - pagePadding) || (i == lastPage - 1 && i > pgnum + pagePadding)) {
+            return (
+                <button
+                    key={"pageturner_" + i}
+                    type="button"
+                    className={styles.pagebutton}
+                    onClick={() => handlePgnumClick((i == 1 && i < pgnum - pagePadding) ? pgnum - pagePadding - 1 : pgnum + pagePadding + 1)}
+                >
+                    <div className={styles.placeholder}></div>
+                    <div className={styles.ellipsis}>{"..."}</div>
+                </button>
+            )
+        }
+    }
 
-    const currentImage = imagepath != null ? <Image src={imagepath} alt={galleryAlt} className={styles.currentimage} onClick={handleImageRight} fill={true}/> : null;
+    const renderPageNumbers = () => {
+        return (
+            <div>
+                {
+                    Constants.IMAGES.get(imageKey).map((myImage, i) =>
+                        renderPageButton(i)
+                    )
+                }
+            </div>
+        );
+    }
 
     return (
         <div className={styles.above}>            
-            <div>                            
-                <Cancel onClick={params.handleClose} fontSize="large"/>
-                        
-                <div className={styles.imagecontainer}>
-                    {currentImage}
-                </div>
-                        
-                <div className={imagepath != null ? styles.bottomarrows : styles.invisible}>                
-                    <ArrowCircleLeft onClick={handleImageLeft} fontSize="large"/>
-                    <span className={styles.pagelabel}>Page {params.imageNumber + 1} of {imageCount}</span>
-                    <ArrowCircleRight onClick={handleImageRight} fontSize="large"/>
+            <div>
+                <div className={styles.numberline}>                
+                    <ArrowCircleLeft
+                        onClick={() => handlePgnumClick(pgnum == 0 ? Constants.IMAGES.get(imageKey).length - 1 : pgnum - 1)}
+                        fontSize="large"
+                        className={styles.arrowbutton}
+                    />
+                    {renderPageNumbers()}
+                    <ArrowCircleRight
+                        onClick={() => handlePgnumClick(pgnum == Constants.IMAGES.get(imageKey).length - 1 ? 0 : pgnum + 1)}
+                        fontSize="large"
+                        className={styles.arrowbutton}
+                    />
                 </div>
                         
             </div>            

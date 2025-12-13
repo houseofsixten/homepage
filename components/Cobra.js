@@ -1,6 +1,6 @@
-import Constants from '../constants/Constants.js';
 import Image from 'next/image';
 import styles from '../components/Cobra.module.css';
+import Constants from '../constants/Constants.js';
 
 export default function Cobra() {
     return(
@@ -22,7 +22,6 @@ export default function Cobra() {
                 The Devil, the Serpent, and other forces of evil set out to torment the characters of the Magic universe.
                 
             </div>
-
         </div>
     );
 }

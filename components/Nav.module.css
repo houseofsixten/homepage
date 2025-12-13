@@ -1,154 +1,43 @@
-.topnav
-{  
-  padding: 10px;
-  margin-top: -100px;
+.overallcontainer {
+  margin-top: 4px;
+  background-color: white;
 }
 
-.navbar
-{
+.catcontainer {
+  padding-top: 3px;
+  padding-left: 15px;
+  padding-right: 3px;
+  padding-bottom: 5px;
   display: flex;
-  justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
-.subnavbar
-{
-  display: flex;
-  justify-content: flex-start;
+.cat {
+  border-bottom: 1px black solid;  
+  background-color: rgb(164, 218, 216);
 }
 
-.subnav
-{
-  padding: 10px;
-  background-color:rgb(157, 220, 190);
-  border-top: 2px black solid;
-  border-left: 2px black solid;
-  border-right: 2px black solid;  
-  border-bottom: 2px black solid;
-  position: relative;
-  top: -2px;
+.subcat {
+  background-color: rgb(227, 255, 254);
 }
 
-.toolbarbutton {  
-    background-color:rgb(101, 143, 124);
-    border: 2px black solid;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;  
-    margin-right: 5px;
-    text-transform: none;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    z-index: 1000;
-    padding: 10px;   
-  }
+.navitem {
+  font-size: 12px;
+  border: 1px black solid;
+  border-radius: 3px;
+  padding: 3px;
+  margin-right: 3px;
+  text-wrap: nowrap;
+  margin-top: 3px;
+  cursor: pointer;
+}
 
-  .toolbarbutton:hover
-  {
-    background-color:rgb(157, 220, 190);
-  }
-  
-  .toolbarbuttonselected {
-    color: black;
-    background-color:rgb(157, 220, 190);
-    border-top: 2px black solid;
-    border-left: 2px black solid;
-    border-right: 2px black solid;  
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;  
-    margin-right: 5px;
-    text-transform: none;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    z-index: 1000;
-    padding: 10px;   
-  }
-  
-  .subtoolbarbutton {
-    color: rgb(20, 109, 68);
-    background-color: rgb(205, 223, 205);
-    border: 2px black solid;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    margin-right: 5px;
-    text-transform: none;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    z-index: 1000;
-    padding: 10px;  
-  }
+.navitem button {
+  color: black;
+  text-decoration: none;
+}
 
-  .subtoolbarbutton:hover {
-    background-color: white;
-  }
-  
-  .subtoolbarbuttonselected {
-    color: rgb(20, 109, 68);
-    background-color: white;
-    border-top: 2px black solid;
-    border-left: 2px black solid;
-    border-right: 2px black solid;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    margin-right: 5px;
-    text-transform: none;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    z-index: 1000;
-    padding: 10px;  
-  }
-  
-  .pages
-  {
-    padding: 10px;
-    border: 2px black solid;
-    background-color: white;
-    position:relative;
-    top: -2px
-  }
-
-  .dropdown
-  {
-    background-color: rgb(157, 220, 190);
-    border-top: 2px black solid;
-    border-left: 2px black solid;
-    border-right: 2px black solid;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 14px;
-    padding: 10px;
-  }
-
-  .subdropdown
-  {
-    background-color: white;
-    border-top: 2px black solid;
-    border-left: 2px black solid;
-    border-right: 2px black solid;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 14px;
-    padding: 10px;
-  }
-
-  .menuitem
-  {
-    font-family: Georgia, 'Times New Roman', Times, serif;    
-    padding: 10px;
-  }
-
-  @media only screen and (max-width: 800px) {
-    .navbar { 
-      display:none;
-    }
-
-    .subnavbar {
-      display:none;
-    }
-  }
-
-  @media only screen and (min-width: 801px) {
-    .dropdown { 
-      display:none;
-    }
-
-    .subdropdown{
-      display: none;
-    }
-  }
+.active, .navitem:hover {
+  color: white;
+  background-color: black;
+}
