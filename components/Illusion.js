@@ -20,7 +20,6 @@ export default function Illusion() {
                 Reisen's friend Youmu offers Reisen a path to an easier life.
                 But that path is paved with lies, or shall we say, illusions.
             </div>
-
         </div>
     );
 }

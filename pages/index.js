@@ -1,7 +1,13 @@
-import Home from '../components/Home';
+import Constants from "../constants/Constants";
+import { useEffect } from 'react';
 
 export default function Index() {
-  return (
-    <Home initCat="Home" initSubCat="Landing"/>
-  );
+    useEffect(() => {
+        window.location.href = Constants.PATHS.get("Landing") + "/0";
+    });
+
+    return (
+        <div>
+        </div>
+    );
 }

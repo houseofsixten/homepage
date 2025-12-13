@@ -1,3 +1,7 @@
+:root {
+  --brand-green: #146d44;
+}
+
 html,
 body {
   padding: 0;

@@ -1,28 +1,3 @@
-.paginatorholder
-{
-  align-items: center;
-}
-
-.bottomarrows {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;        
-  }
-
-  .pagelabel {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 20px;
-    padding-left: 20px; 
-    padding-right: 20px;
-    width: 200px; 
-  }
-
-  .invisible
-  {
-    display: none;
-  }
-
   .above
   {
     z-index: 9999;    
@@ -30,18 +5,70 @@
     padding-top: 10px;  
   }
 
-  .currentimage
-  { 
-    object-fit: contain;    
+  .numberline
+  {
+    display: flex;
+    align-items: center;
   }
 
-  .imagecontainer
+  .pagebutton
   {    
-    z-index: 10000;
-    position: relative;
-    height: 80vh;    
+    border: 1px black solid;
+    border-radius: 3px;
+    padding: 3px;
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    height: 75px;
+    width: 60px;
+    outline: 3px white solid;
+    transition: 0.5s;
   }
 
+  .pagebutton:hover
+  {
+    outline: 3px #146d44 solid;
+  }
+
+  .pagebuttonimage {
+    object-fit: cover;
+    width: 52px;
+    height: 50px;
+    display: block;
+  }
+
+  .pagenumberdiv {
+    padding-top: 3px;
+    height: 25px;
+  }
+
+  .placeholder {
+    height: 50px;
+  }
+
+  .ellipsis {
+    padding-top: 3px;
+  }
+
+  .current
+  {
+    background-color: black;
+    color: white;
+  }
+
+  .arrowbutton
+  {
+    cursor: pointer;
+    outline: 3px white solid;
+    margin: 3px;
+    transition: 0.5s;
+  }
+
+  .arrowbutton:hover
+  {
+    outline: 3px #146d44 solid;
+  }
 
 
 

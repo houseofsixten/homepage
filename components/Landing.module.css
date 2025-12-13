@@ -3,54 +3,171 @@
     font-family: Georgia, 'Times New Roman', Times, serif;       
 }
 
-
-.cobrasplash
-{       
-    max-width: 600px;
-    width: 100%;
-    height: auto;   
-    border: 2px white solid;    
-}
-
-.autumnsplash
-{       
-    max-width: 200px;
-    width: 100%;
-    height: auto;   
-    border: 2px white solid;    
-}
-
-.archivesplash
-{       
-    max-width: 150px;
-    width: 100%;
-    height: auto;   
-    border: 2px white solid;    
-}
-
-.cobrasplash:hover
-{
-    border: 2px green solid;
-}
-
-.autumnsplash:hover
-{
-    border: 2px green solid;
-}
-
-.archivesplash:hover
-{
-    border: 2px green solid;
-}
-
-.imagerow
-{
-    width: 100%;
-    padding-right: 20px;
+.buttonsholder {
     display: flex;
+    flex-wrap: wrap;
+}
+
+.imagebutton
+{
+    width: 200px;
+    height: 100px;
+    border-radius: 6px;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    cursor: pointer;
+    padding-block: 0px;
+    padding-inline: 0px;
+    outline: 3px white solid;
+    transition: 0.5s;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.imagebutton:hover
+{
+    outline: 3px #146d44 solid;
+    background-size: 220%;
+}
+
+.buttonabout
+{
+    background-image: url("../images/frogtransparent.png");
+    background-position: right 30px top -2px;
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-color: #6cac8e;
+}
+
+.buttonabout:hover
+{
+    background-size: 70%;
+}
+
+.buttoncobra
+{
+    background-image: url("../images/magic/lotuscobraisevil/page_000.jpg");
+    background-position: right 0px top -80px;
+    background-size: 200%;
+}
+
+.buttonfairy
+{
+    background-image: url("../images/touhou/fairyring/poster_color.jpg");
+    background-position: right -50px top -150px;
+    background-size: 200%;
+}
+
+.buttonchildren
+{
+    background-image: url("../images/touhou/autumnchildren/page000.jpg");
+    background-position: right -50px top -100px;
+    background-size: 200%;
+}
+
+.buttonillusion
+{
+    background-image: url("../images/touhou/illusion/illusion_thumbnail.jpg");
+    background-position: right 0px top -100px;
+    background-size: 200%;
+}
+
+.buttonephemeral
+{
+    background-image: url("../images/touhou/ephemeral/eub_tokiko_4.jpg");
+    background-position: right -10px top 0px;
+    background-size: 100%;
+}
+
+.buttonephemeral:hover
+{
+    background-size: 110%;
+}
+
+.buttonflatland
+{
+    background-image: url("../images/kancolle/flatland/fubuki37.jpg");
+    background-position: right -10px top -30px;
+    background-size: 120%;
+}
+
+.buttonflatland:hover
+{
+    background-size: 140%;
+}
+
+.buttonhololive
+{
+    background-image: url("../images/fate/hololive/sora_haruka.jpg");
+    background-position: right -20px top -100px;
+    background-size: 120%;
+}
+
+.buttonhololive:hover
+{
+    background-size: 130%;
+}
+
+
+.buttonorifox
+{
+    background-image: url("../images/arknights/orifox/radiotel.jpg");
+    background-position: right -20px top -180px;
+    background-size: 120%;
+}
+
+.buttonorifox:hover
+{
+    background-size: 130%;
+}
+
+.buttontrinidad
+{
+    background-image: url("../images/bluearchive/trinidad/hifumariachi2.jpg");
+    background-position: right -15px top -20px;
+    background-size: 110%;
+}
+
+.buttontrinidad:hover
+{
+    background-size: 120%;
+}
+
+.buttonadmiral
+{
+    background-image: url("../images/kancolle/admiral/beflat_05.jpg");
+    background-position: right -30px top -270px;
+    background-size: 200%;
+}
+
+.buttonchicago
+{
+    background-image: url("../images/kancolle/chicago/beflat3_01.jpg");
+    background-position: right -100px top -80px;
+    background-size: 200%;
+}
+
+.buttonfgo
+{
+    background-image: url("../images/fate/fgo/saturn2b.jpg");
+    background-position: right -100px top -80px;
+    background-size: 200%;
 }
 
 .header
 {
     font-weight: normal;
+    margin-block-start: 0px;
+}
+
+.labelshade {
+    background-color: rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    color: white;
+    width: 100%;
+    text-align: right;
+    padding-left: 5px;
+    padding-right: 6px;
+    padding-top: 2px;
 }

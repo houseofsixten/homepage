@@ -1,7 +1,5 @@
-import Constants from '../constants/Constants.js';
 import Image from 'next/image';
 import styles from '../components/About.module.css';
-import twittericon from '../images/twitter_icon.jpg';
 import pixivicon from '../images/pixiv_icon.jpg';
 import guuicon from '../images/guu_icon.jpg';
 
@@ -10,7 +8,12 @@ export default function About() {
         <div className={styles.container}>
 
             <div className={styles.frogcolumn}>
-                <Image src={Constants.FROG} alt="Frog" priority="true" className={styles.frogimage} />
+                <a
+                    className={styles.imagebutton + " " + styles.buttonabout}
+                    href="../../../home/landing/0"
+                >
+                    <div className={styles.labelshade}>Home</div>
+                </a>
             </div>            
 
             <div className={styles.walloftext}>

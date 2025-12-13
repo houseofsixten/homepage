@@ -508,31 +508,42 @@ import ba_18 from '../images/bluearchive/trinidad/hifumi-jarabe.jpg';
 import ba_19 from '../images/bluearchive/trinidad/hifumi-negra3.jpg';
 
 const menu = new Map([
-    ["Home", ["Landing", "About"]],
-    ["Magic", ["Lotus Cobra is Evil"]],
-    ["Touhou", ["Fairy Ring", "Autumn Children", "Use Your Illusion", "Ephemeral Unnatural Balance"]],
-    ["KanColle", ["Ryujo and the Legendary Admiral", "Sweet Home Chicago", "Flatland"]],
-    ["Fate", ["Fate Grand Order", "Hololive"]],
-    ["Arknights", ["Orifox Cluster"]],
-    ["Blue Archive", ["Escuela Trinidad"]]
+    ["home", ["landing", "about"]],
+    ["magic", ["lotuscobraisevil"]],
+    ["touhou", ["fairyring", "autumnchildren", "illusion", "ephemeral"]],
+    ["kancolle", ["admiral", "chicago", "flatland"]],
+    ["fate", ["fgo", "hololive"]],
+    ["arknights", ["orifox"]],
+    ["bluearchive", ["trinidad"]]
 ]
 );
 
+const friendlyNames = new Map([
+    ["home", "Home"],
+    ["landing", "Landing"],
+    ["about", "About"],
+    ["magic", "Magic"],
+    ["lotuscobraisevil", "Lotus Cobra is Evil"],
+    ["touhou", "Touhou"],
+    ["fairyring", "Fairy Ring"],
+    ["autumnchildren", "Autumn Children"],
+    ["illusion", "Use Your Illusion"],
+    ["ephemeral", "Ephemeral Unnatural Balance"],
+    ["kancolle", "KanColle"],
+    ["admiral", "Ryujo and the Legendary Admiral"],
+    ["chicago", "Sweet Home Chicago"],
+    ["flatland", "Flatland"],
+    ["fate", "Fate"],
+    ["fgo", "Fate Grand Order"],
+    ["hololive", "Hololive"],
+    ["arknights", "Arknights"],
+    ["orifox", "Orifox Cluster"],
+    ["bluearchive", "Blue Archive"],
+    ["trinidad", "Escuela Trinidad"]
+]);
+
 const paths = new Map([
-    ["Landing", "/home/landing"],
-    ["About", "/home/about"],    
-    ["Lotus Cobra is Evil", "/magic/lotuscobraisevil"],
-    ["Fairy Ring", "/touhou/fairyring"],
-    ["Autumn Children", "/touhou/autumnchildren"],
-    ["Use Your Illusion", "/touhou/illusion"],
-    ["Ephemeral Unnatural Balance", "/touhou/ephemeral"],
-    ["Ryujo and the Legendary Admiral", "/kancolle/admiral"],
-    ["Sweet Home Chicago", "/kancolle/chicago"],
-    ["Flatland", "/kancolle/flatland"],
-    ["Fate Grand Order", "/fate/fgo"],
-    ["Hololive", "/fate/hololive"],
-    ["Orifox Cluster", "/arknights/orifox"],
-    ["Escuela Trinidad", "/bluearchive/trinidad"],
+    ["Landing", "/home/landing"]
 ]
 );
 
@@ -696,6 +707,7 @@ const gallerySize = 10;
 
 const Constants = {
     MENU: menu,
+    FRIENDLYNAMES: friendlyNames,
     PATHS: paths,
     IMAGES: images,
     THUMBNAILS: thumbnails,

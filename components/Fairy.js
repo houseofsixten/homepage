@@ -1,6 +1,7 @@
 import Constants from '../constants/Constants.js';
 import Image from 'next/image';
 import styles from '../components/Fairy.module.css';
+import PageTurner from './PageTurner.js';
 
 export default function Fairy() {
     return(
