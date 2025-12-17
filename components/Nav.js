@@ -4,16 +4,10 @@ import Constants from '../constants/Constants.js';
 import styles from '../components/Nav.module.css'
 
 export default function Nav(params) {
-  const {cat, setCat, subcat, setSubcat, pgnum, setPgnum, origin, stateStack, setStateStack} = params;
+  const {cat, subcat, origin} = params;
 
-  const handleNavClick = (newCat, newSubcat) => {      
-    let stack = stateStack;
-    stack.push({cat: cat, subcat: subcat, pgnum: pgnum});
-    setStateStack(stack);      
-    setCat(newCat)
-    setSubcat(newSubcat);
-    setPgnum(0);
-    window.history.replaceState(null, "House of Sixten", origin + "/" + newCat + "/" + newSubcat + "/0");
+  const handleNavClick = (newCat, newSubcat) => {
+    window.location.href = origin + "/" + newCat + "/" + newSubcat + "/0";
   };
 
   const navItems = () => {

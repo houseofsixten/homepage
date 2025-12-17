@@ -8,20 +8,14 @@ import Ephemeral from "./Ephemeral";
 import Gallery from "./Gallery";
 
 export default function Content(params) {
-  const {cat, setCat, subcat, setSubcat, pgnum, setPgnum, origin, stateStack, setStateStack} = params;
+  const {cat, subcat, pgnum, origin} = params;
 
   const renderDescription = () => {
     switch(subcat) {
       case "landing":
       return (
           <Landing
-            cat={cat}
-            setCat={setCat}
-            subcat={subcat}
-            setSubcat={setSubcat}
             origin={origin}
-            stateStack={stateStack}
-            setStateStack={setStateStack}
           />
       );
     case "about":
@@ -48,10 +42,7 @@ export default function Content(params) {
           cat={cat}
           subcat={subcat}
           pgnum={pgnum}
-          setPgnum={setPgnum}
           origin={origin}
-          stateStack={stateStack}
-          setStateStack={setStateStack}
         />
       );
     }

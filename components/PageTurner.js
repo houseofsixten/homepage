@@ -6,14 +6,10 @@ import Image from 'next/image.js';
 const pagePadding = 2;
 
 export default function PageTurner(params) {
-    const { cat, subcat, pgnum, setPgnum, imageKey, origin, stateStack, setStateStack } = params;
+    const { cat, subcat, pgnum, imageKey, origin } = params;
 
     const handlePgnumClick = (newPgnum) => {    
-        let stack = stateStack;
-        stack.push({cat: cat, subcat: subcat, pgnum: pgnum});
-        setStateStack(stack);        
-        setPgnum(newPgnum);
-        window.history.replaceState(null, "House of Sixten", origin + "/" + cat + "/" + subcat + "/" + newPgnum);
+        window.location.href = origin + "/" + cat + "/" + subcat + "/" + newPgnum;
     };
 
     const renderPageButton = (i) => {
@@ -71,7 +67,7 @@ export default function PageTurner(params) {
     return (
         <div className={styles.above}>            
             <div>
-                <div className={styles.numberline}>                
+                <div className={styles.numberline}>
                     <ArrowCircleLeft
                         onClick={() => handlePgnumClick(pgnum == 0 ? Constants.IMAGES.get(imageKey).length - 1 : pgnum - 1)}
                         fontSize="large"

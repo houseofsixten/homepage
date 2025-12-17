@@ -10,42 +10,21 @@ export default function Index() {
     const [subcat, setSubcat] = useState("");
     const [pgnum, setPgnum] = useState(0);
     const [origin, setOrigin] = useState("");
-    const [stateStack, setStateStack] = useState([]);
 
     useEffect(() => {
         setOrigin(window.location.origin);
     });
 
-    useEffect(() => {
-        const handleBackButton = (event) => {
-            event.preventDefault();
-            if (stateStack.length > 0) {
-                const topOfStack = stateStack.pop();
-                setCat(topOfStack.cat);
-                setSubcat(topOfStack.subcat);
-                setPgnum(topOfStack.pgnum);
-                window.history.replaceState(null, "House of Sixten", origin + "/" + topOfStack.cat + "/" + topOfStack.subcat + "/" + topOfStack.pgnum);
-            } else {
-                window.history.back();
-            }
-        };
-
-        window.history.pushState(null, null, window.location.pathname);
-        window.addEventListener("popstate", handleBackButton);
-
-        return () => {
-        window.removeEventListener("popstate", handleBackButton);
-        };
-    }, []);
-
-
     const router = useRouter();
 
     useEffect(() => {
         if(router.isReady) {
-            setCat(router.query.cat.toLowerCase());
-            setSubcat(router.query.subcat.toLowerCase());
-            setPgnum(Number(router.query.pgnum));
+            const initCat = router.query.cat.toLowerCase();
+            const initSubcat = router.query.subcat.toLowerCase();
+            const initPgnum = router.query.pgnum;
+            setCat(initCat);
+            setSubcat(initSubcat);
+            setPgnum(Number(initPgnum));
         }
 
     }, [router.isReady]);
@@ -75,38 +54,25 @@ export default function Index() {
                     <button
                         className={styles.frogheader}
                         onClick={() => {
-                            setCat("home");
-                            setSubcat("landing");
-                            window.history.replaceState(null, "House of Sixten", origin + "/home/landing/0");
+                            window.location.href = (origin + "/home/landing/0");
                         }}
                     >
                     </button> 
 
                     <Nav
-                        cat={cat}
-                        setCat={setCat}
+                        cat={cat}                        
                         subcat={subcat}
-                        setSubcat={setSubcat}
-                        pgnum={pgnum}
-                        setPgnum={setPgnum}
                         origin={origin}
-                        stateStack={stateStack}
-                        setStateStack={setStateStack}
                     />
 
                     <div className={styles.dropshadow}></div>
 
                     <div className={styles.content}>  
                         <Content
-                            cat={cat}
-                            setCat={setCat}
+                            cat={cat}                            
                             subcat={subcat}
-                            setSubcat={setSubcat}
                             pgnum={pgnum}
-                            setPgnum={setPgnum}
                             origin={origin}
-                            stateStack={stateStack}
-                            setStateStack={setStateStack}
                         />
                     </div>
 

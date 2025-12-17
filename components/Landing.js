@@ -1,15 +1,10 @@
 import styles from '../components/Landing.module.css';
 
 export default function Landing(params) {
-  const {cat, setCat, subcat, setSubcat, origin, stateStack, setStateStack} = params;
+  const {origin} = params;
 
   const handleNavClick = (newCat, newSubcat) => {
-    let stack = stateStack;
-    stack.push({cat: cat, subcat: subcat, pgnum: 0});
-    setStateStack(stack);
-    setCat(newCat)
-    setSubcat(newSubcat);
-    window.history.replaceState(null, "House of Sixten", origin + "/" + newCat + "/" + newSubcat + "/0");
+    window.location.href = origin + "/" + newCat + "/" + newSubcat + "/0";
   };
 
   return(

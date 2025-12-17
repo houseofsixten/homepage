@@ -4,7 +4,7 @@ import Constants from '../constants/Constants.js';
 import PageTurner from './PageTurner.js';
 
 export default function Gallery(params) {
-    const { cat, subcat, pgnum, setPgnum, origin, stateStack, setStateStack } = params;
+    const { cat, subcat, pgnum, origin } = params;
 
     const imageKey = Constants.FRIENDLYNAMES.get(subcat);
 
@@ -43,11 +43,8 @@ export default function Gallery(params) {
                     cat={cat}
                     subcat={subcat}
                     pgnum={pgnum}
-                    setPgnum={setPgnum}
                     imageKey={imageKey}
                     origin={origin}
-                    stateStack={stateStack}
-                    setStateStack={setStateStack}
                 />
 
                 <hr/>
