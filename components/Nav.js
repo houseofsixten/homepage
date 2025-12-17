@@ -4,9 +4,12 @@ import Constants from '../constants/Constants.js';
 import styles from '../components/Nav.module.css'
 
 export default function Nav(params) {
-  const {cat, setCat, subcat, setSubcat, setPgnum, origin} = params;
+  const {cat, setCat, subcat, setSubcat, pgnum, setPgnum, origin, stateStack, setStateStack} = params;
 
-  const handleNavClick = (newCat, newSubcat) => {        
+  const handleNavClick = (newCat, newSubcat) => {      
+    let stack = stateStack;
+    stack.push({cat: cat, subcat: subcat, pgnum: pgnum});
+    setStateStack(stack);      
     setCat(newCat)
     setSubcat(newSubcat);
     setPgnum(0);

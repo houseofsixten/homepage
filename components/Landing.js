@@ -1,9 +1,12 @@
 import styles from '../components/Landing.module.css';
 
 export default function Landing(params) {
-  const {setCat, setSubcat, origin} = params;
+  const {cat, setCat, subcat, setSubcat, origin, stateStack, setStateStack} = params;
 
-  const handleNavClick = (newCat, newSubcat) => {        
+  const handleNavClick = (newCat, newSubcat) => {
+    let stack = stateStack;
+    stack.push({cat: cat, subcat: subcat, pgnum: 0});
+    setStateStack(stack);
     setCat(newCat)
     setSubcat(newSubcat);
     window.history.replaceState(null, "House of Sixten", origin + "/" + newCat + "/" + newSubcat + "/0");

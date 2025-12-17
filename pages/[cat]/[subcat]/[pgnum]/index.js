@@ -10,10 +10,34 @@ export default function Index() {
     const [subcat, setSubcat] = useState("");
     const [pgnum, setPgnum] = useState(0);
     const [origin, setOrigin] = useState("");
+    const [stateStack, setStateStack] = useState([]);
 
     useEffect(() => {
         setOrigin(window.location.origin);
     });
+
+    useEffect(() => {
+        const handleBackButton = (event) => {
+            event.preventDefault();
+            if (stateStack.length > 0) {
+                const topOfStack = stateStack.pop();
+                setCat(topOfStack.cat);
+                setSubcat(topOfStack.subcat);
+                setPgnum(topOfStack.pgnum);
+                window.history.replaceState(null, "House of Sixten", origin + "/" + topOfStack.cat + "/" + topOfStack.subcat + "/" + topOfStack.pgnum);
+            } else {
+                window.history.back();
+            }
+        };
+
+        window.history.pushState(null, null, window.location.pathname);
+        window.addEventListener("popstate", handleBackButton);
+
+        return () => {
+        window.removeEventListener("popstate", handleBackButton);
+        };
+    }, []);
+
 
     const router = useRouter();
 
@@ -50,7 +74,11 @@ export default function Index() {
 
                     <button
                         className={styles.frogheader}
-                        onClick={() => { setCat("home"); setSubcat("landing"); }}
+                        onClick={() => {
+                            setCat("home");
+                            setSubcat("landing");
+                            window.history.replaceState(null, "House of Sixten", origin + "/home/landing/0");
+                        }}
                     >
                     </button> 
 
@@ -59,8 +87,11 @@ export default function Index() {
                         setCat={setCat}
                         subcat={subcat}
                         setSubcat={setSubcat}
+                        pgnum={pgnum}
                         setPgnum={setPgnum}
                         origin={origin}
+                        stateStack={stateStack}
+                        setStateStack={setStateStack}
                     />
 
                     <div className={styles.dropshadow}></div>
@@ -74,6 +105,8 @@ export default function Index() {
                             pgnum={pgnum}
                             setPgnum={setPgnum}
                             origin={origin}
+                            stateStack={stateStack}
+                            setStateStack={setStateStack}
                         />
                     </div>
 
