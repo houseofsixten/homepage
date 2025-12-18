@@ -2,15 +2,27 @@ import { ArrowCircleLeft, ArrowCircleRight }  from '@mui/icons-material';
 import styles from '../components/PageTurner.module.css';
 import Constants from '../constants/Constants.js';
 import Image from 'next/image.js';
+import { useSearchParams } from 'next/navigation';
+import { useEffect, useRef } from 'react';
 
 const pagePadding = 2;
 
 export default function PageTurner(params) {
     const { cat, subcat, pgnum, imageKey, origin } = params;
 
-    const handlePgnumClick = (newPgnum) => {    
-        window.location.href = origin + "/" + cat + "/" + subcat + "/" + newPgnum;
-    };
+    const searchParams = useSearchParams();
+
+    const paginationRef = useRef(null);
+
+    useEffect(() => {
+        const sd = searchParams.get("sd");
+        if (sd != null) {
+            window.scrollTo({
+                top: paginationRef.current.offsetTop,
+                behavior: "auto"                
+            });
+        }
+    }, []);
 
     const renderPageButton = (i) => {
         const lastPage = Constants.IMAGES.get(imageKey).length - 1;
@@ -27,34 +39,32 @@ export default function PageTurner(params) {
             )
         {
             return (
-                <button
+                <a
                     key={"pageturner_" + i}
-                    type="button"
-                    onClick={() => handlePgnumClick(i)}
+                    href={origin + "/" + cat + "/" + subcat + "/" + i + "?sd=1"}
                     className={styles.pagebutton + (pgnum == i ? (" " + styles.current) : "")}
                 >
                     <Image src={Constants.IMAGES.get(imageKey)[i]} alt={"thumbnail_" + i} className={styles.pagebuttonimage} />
                     <div className={styles.pagenumberdiv}>{i}</div>
-                </button>
+                </a>
             );
         } else if ((i == 1 && i < pgnum - pagePadding) || (i == lastPage - 1 && i > pgnum + pagePadding)) {
             return (
-                <button
-                    key={"pageturner_" + i}
-                    type="button"
+                <a
+                    key={"pageturner_" + i}                    
                     className={styles.pagebutton}
-                    onClick={() => handlePgnumClick((i == 1 && i < pgnum - pagePadding) ? pgnum - pagePadding - 1 : pgnum + pagePadding + 1)}
+                    href={origin + "/" + cat + "/" + subcat + "/" + ((i == 1 && i < pgnum - pagePadding) ? pgnum - pagePadding - 1 : pgnum + pagePadding + 1) + "?sd=1"}
                 >
                     <div className={styles.placeholder}></div>
                     <div className={styles.ellipsis}>{"..."}</div>
-                </button>
+                </a>
             )
         }
     }
 
     const renderPageNumbers = () => {
         return (
-            <div>
+            <div className={styles.buttoncontainer}>
                 {
                     Constants.IMAGES.get(imageKey).map((myImage, i) =>
                         renderPageButton(i)
@@ -67,20 +77,21 @@ export default function PageTurner(params) {
     return (
         <div className={styles.above}>            
             <div>
-                <div className={styles.numberline}>
-                    <ArrowCircleLeft
-                        onClick={() => handlePgnumClick(pgnum == 0 ? Constants.IMAGES.get(imageKey).length - 1 : pgnum - 1)}
-                        fontSize="large"
-                        className={styles.arrowbutton}
-                    />
+                <div className={styles.numberline} ref={paginationRef}>
+                    <a href={origin + "/" + cat + "/" + subcat + "/" + (pgnum == 0 ? Constants.IMAGES.get(imageKey).length - 1 : pgnum - 1) + "?sd=1"}>
+                        <ArrowCircleLeft
+                            fontSize="large"
+                            className={styles.arrowbutton}
+                        />
+                    </a>
                     {renderPageNumbers()}
-                    <ArrowCircleRight
-                        onClick={() => handlePgnumClick(pgnum == Constants.IMAGES.get(imageKey).length - 1 ? 0 : pgnum + 1)}
-                        fontSize="large"
-                        className={styles.arrowbutton}
-                    />
-                </div>
-                        
+                    <a href={origin + "/" + cat + "/" + subcat + "/" + (pgnum == Constants.IMAGES.get(imageKey).length - 1 ? 0 : pgnum + 1) + "?sd=1"}>
+                        <ArrowCircleRight
+                            fontSize="large"
+                            className={styles.arrowbutton}
+                        />
+                    </a>
+                </div>                        
             </div>            
         </div>
     );
