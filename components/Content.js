@@ -8,7 +8,7 @@ import Ephemeral from "./Ephemeral";
 import Gallery from "./Gallery";
 
 export default function Content(params) {
-  const {cat, subcat, pgnum, origin} = params;
+  const {cat, subcat, pgnum, origin, scrollTrigger} = params;
 
   const renderDescription = () => {
     switch(subcat) {
@@ -43,6 +43,7 @@ export default function Content(params) {
           subcat={subcat}
           pgnum={pgnum}
           origin={origin}
+          scrollTrigger={scrollTrigger}
         />
       );
     }

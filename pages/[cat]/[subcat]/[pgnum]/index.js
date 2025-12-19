@@ -3,18 +3,21 @@ import { useRouter } from 'next/router';
 import Nav from '../../../../components/Nav';
 import Content from '../../../../components/Content';
 import Head from 'next/head';
-import styles from './index.module.css'
+import styles from './index.module.css';
+import { useSearchParams } from 'next/navigation';
 
 export default function Index() {
     const [cat, setCat] = useState("");
     const [subcat, setSubcat] = useState("");
     const [pgnum, setPgnum] = useState(0);
     const [origin, setOrigin] = useState("");
+    const [scrollTrigger, setScrollTrigger] = useState(false);
 
     useEffect(() => {
         setOrigin(window.location.origin);
     });
 
+    const searchParams = useSearchParams();
     const router = useRouter();
 
     useEffect(() => {
@@ -25,9 +28,14 @@ export default function Index() {
             setCat(initCat);
             setSubcat(initSubcat);
             setPgnum(Number(initPgnum));
+
+            const sd = searchParams.get("sd");
+            if (sd != null) {
+                setScrollTrigger(true);
+            }
         }
 
-    }, [router.isReady]);
+    }, [searchParams, router.isReady]);
 
     return (
         <div className={styles.overall}>
@@ -73,6 +81,7 @@ export default function Index() {
                             subcat={subcat}
                             pgnum={pgnum}
                             origin={origin}
+                            scrollTrigger={scrollTrigger}
                         />
                     </div>
 
