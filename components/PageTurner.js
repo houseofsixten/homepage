@@ -2,27 +2,11 @@ import { ArrowCircleLeft, ArrowCircleRight }  from '@mui/icons-material';
 import styles from '../components/PageTurner.module.css';
 import Constants from '../constants/Constants.js';
 import Image from 'next/image.js';
-import { useSearchParams } from 'next/navigation';
-import { useEffect, useRef } from 'react';
 
 const pagePadding = 2;
 
 export default function PageTurner(params) {
     const { cat, subcat, pgnum, imageKey, origin } = params;
-
-    const searchParams = useSearchParams();
-
-    const paginationRef = useRef(null);
-
-    useEffect(() => {
-        const sd = searchParams.get("sd");
-        if (sd != null) {
-            window.scrollTo({
-                top: paginationRef.current.offsetTop,
-                behavior: "auto"                
-            });
-        }
-    }, []);
 
     const renderPageButton = (i) => {
         const lastPage = Constants.IMAGES.get(imageKey).length - 1;
@@ -75,9 +59,9 @@ export default function PageTurner(params) {
     }
 
     return (
-        <div className={styles.above}>            
+        <div className={styles.above}>
             <div>
-                <div className={styles.numberline} ref={paginationRef}>
+                <div className={styles.numberline}>
                     <a href={origin + "/" + cat + "/" + subcat + "/" + (pgnum == 0 ? Constants.IMAGES.get(imageKey).length - 1 : pgnum - 1) + "?sd=1"}>
                         <ArrowCircleLeft
                             fontSize="large"

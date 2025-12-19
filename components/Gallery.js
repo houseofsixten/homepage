@@ -3,8 +3,25 @@ import styles from '../components/Gallery.module.css';
 import Constants from '../constants/Constants.js';
 import PageTurner from './PageTurner.js';
 
+import { useEffect, useRef } from 'react';
+
 export default function Gallery(params) {
-    const { cat, subcat, pgnum, origin } = params;
+    const { cat, subcat, pgnum, origin, scrollTrigger } = params;
+
+    const paginationRef = useRef(null);
+
+    function scroll() {
+        const homeButton = paginationRef.current;
+        homeButton.scrollIntoView({
+            behavior: "auto"
+        });
+    };
+
+    useEffect(() => {
+        if (scrollTrigger && paginationRef.current) {
+            scroll();
+        }
+    }, [scrollTrigger]);
 
     const imageKey = Constants.FRIENDLYNAMES.get(subcat);
 
@@ -32,6 +49,7 @@ export default function Gallery(params) {
                     <a
                         className={styles.imagebutton + " " + styles.buttonabout}
                         href="../../../home/landing/0"
+                        ref={paginationRef}
                     >
                         <div className={styles.labelshade}>Home</div>
                     </a>
